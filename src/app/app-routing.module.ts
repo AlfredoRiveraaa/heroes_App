@@ -12,7 +12,8 @@ const routes: Routes = [
   {
     path: 'heroes',
     loadChildren: () => import('./heroes/heroes.module').then( m => m.HeroesModule),
-    canMatch: [canMatchGuard]  // Usamos el CanMatch guard aquí 
+    canMatch: [canMatchGuard],  // Usamos el CanMatch guard aquí 
+    canActivate: [canMatchGuard]  // También protegemos la navegación con CanActivate
   },
   {
     path: '404',
